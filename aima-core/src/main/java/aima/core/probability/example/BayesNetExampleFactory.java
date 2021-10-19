@@ -111,6 +111,80 @@ public class BayesNetExampleFactory {
 		return new BayesNet(meningitis);
 	}
 
+	//guia04
+	
+	public static BayesianNetwork constructGuia04() {
+		FiniteNode infrigiuLeiEleitoral = new FullCPTNode(ExampleRV.INFRIGIULEIELEITOTAL_RV,
+				new double[] { 0.9, 0.1 });
+		FiniteNode promotorPoliticamenteMotivado = new FullCPTNode(ExampleRV.PROMOTORPOLITICAMENTEMOTIVADO_RV,
+				new double[] { 0.1, 0.9 });
+		FiniteNode indiciado = new FullCPTNode(ExampleRV.INDICIADO_RV, new double[] {
+				// B=true, M=true, I=true
+				0.9,
+				// B=true, M=true, I=false
+				0.1,
+				// B=true, M=false, I=true
+				0.5,
+				// B=true, M=false, I=false
+				0.5,
+				// B=false, M=true, I=true
+				0.5,
+				// B=false, M=true, I=false
+				0.5,
+				// B=false, M=false, I=true
+				0.1,
+				// B=false, E=false, A=false
+				0.9 }, infrigiuLeiEleitoral, promotorPoliticamenteMotivado);
+		@SuppressWarnings("unused")
+		FiniteNode culpado = new FullCPTNode(ExampleRV.CONSIDERADOCULPADO_RV,
+				new double[] {
+						// B=true, I=true, M=true, G= true
+						0.9,
+						// B=true, I=true, M=true, G=false
+						0.1,
+						// B=true, I=true, M=false, G=true
+						0.8,
+						// B=true, I=true, M=false, G=false
+						0.2,
+						// B=true, I=false, M=true, G=true
+						0.0,
+						// B=true, I=false, M=true, G=false
+						1.0,
+						// B=true, I=false, M=false, G=true
+						0.0,
+						// B=true, I=false, M=false, G=false
+						1.0,
+						// B=false, I=true, M=true, G=true
+						0.2,
+						// B=false, I=true, M=true, G=false
+						0.8,
+						// B=false, I=true, M=false, G=true
+						0.1,
+						// B=false, I=true, M=false, G=false
+						0.9,
+						// B=false, I=false, M=true, G=true
+						0.0,
+						// B=false, I=false, M=true, G=false
+						1.0,
+						// B=false, I=false, M=false, G=true
+						0.0,
+						// B=false, I=false, M=false, G=false
+						1.0}, infrigiuLeiEleitoral, indiciado, promotorPoliticamenteMotivado);
+		@SuppressWarnings("unused")
+		FiniteNode preso = new FullCPTNode(ExampleRV.PRESO_RV,
+				new double[] {
+						// G=true, J=true
+						0.9,
+						// G=true, J=false
+						0.1,
+						// G=false, J=true
+						0.0,
+						// G=false, J=false
+						1.0 }, culpado);
+
+		return new BayesNet(infrigiuLeiEleitoral, indiciado, promotorPoliticamenteMotivado, culpado, preso);
+	}
+
 	public static BayesianNetwork constructBurglaryAlarmNetwork() {
 		FiniteNode burglary = new FullCPTNode(ExampleRV.BURGLARY_RV,
 				new double[] { 0.001, 0.999 });

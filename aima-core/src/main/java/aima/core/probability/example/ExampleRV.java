@@ -31,6 +31,19 @@ public class ExampleRV {
 			new BooleanDomain());
 	public static final RandVar STIFF_NECK_RV = new RandVar("StiffNeck",
 			new BooleanDomain());
+	// guia 03
+	
+	public static final RandVar INFRIGIULEIELEITOTAL_RV = new RandVar("InfringiuLeiEleitoral",
+			new BooleanDomain());
+	public static final RandVar INDICIADO_RV = new RandVar("Indiciado",
+			new BooleanDomain());
+	public static final RandVar PROMOTORPOLITICAMENTEMOTIVADO_RV = new RandVar("PromotorPoliticamenteMotivado",
+			new BooleanDomain());
+	public static final RandVar CONSIDERADOCULPADO_RV = new RandVar("ConsideradoCulpado",
+			new BooleanDomain());
+	public static final RandVar PRESO_RV = new RandVar("Preso",
+			new BooleanDomain());
+	
 	//
 	public static final RandVar BURGLARY_RV = new RandVar("Burglary",
 			new BooleanDomain());
