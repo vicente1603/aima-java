@@ -44,7 +44,19 @@ public class ExampleRV {
 	public static final RandVar PRESO_RV = new RandVar("Preso",
 			new BooleanDomain());
 	
+	// Projeto Final Questão 1
+	
+	public static final RandVar AGE_RV = new RandVar("Age",
+			new ArbitraryTokenDomain("0-30", "31-40", "41-100"));
+	public static final RandVar NATIONALITY_RV = new RandVar("Nationality",
+			new BooleanDomain());
+	public static final RandVar SPORTS_RV = new RandVar("Sports",
+			new BooleanDomain());
+	public static final RandVar WATCH_TV_RV = new RandVar("Watch_TV",
+			new ArbitraryTokenDomain("a_lot", "some", "none"));
+	
 	//
+
 	public static final RandVar BURGLARY_RV = new RandVar("Burglary",
 			new BooleanDomain());
 	public static final RandVar EARTHQUAKE_RV = new RandVar("Earthquake",

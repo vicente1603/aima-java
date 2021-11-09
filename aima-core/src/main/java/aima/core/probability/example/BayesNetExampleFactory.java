@@ -232,6 +232,74 @@ public class BayesNetExampleFactory {
 
 		return new BayesNet(burglary, earthquake);
 	}
+	
+	public static BayesianNetwork constructProjetoFinal_1() {
+		
+		FiniteNode age = new FullCPTNode(ExampleRV.AGE_RV,
+				new double[] { 
+						//a1
+						0.3,
+						//a2
+						0.6,
+						//a3
+						0.1
+		});
+		
+		FiniteNode nationality = new FullCPTNode(ExampleRV.NATIONALITY_RV,
+				new double[] {
+						//b1=true, b2=false
+						0.2, 
+						//b1=false b2=true
+						0.8,
+						
+		});
+		
+//		FiniteNode sports = new FullCPTNode(ExampleRV.SPORTS_RV,
+//				new double[] {
+//						//c1|a1,b1
+//						0.5,
+//						//c1|a1,b2
+//						0.7,
+//						//c1|a2,b1
+//						0.6,
+//						//c1|a2,b2
+//						0.8,
+//						//c1|a3,b1
+//						0.4,
+//						//c1|a3,b2
+//						0.1,
+//						//c2|a1,b1
+//						0.5,
+//						//c2|a1,b2
+//						0.3,
+//						//c2|a2,b1
+//						0.4,
+//						//c2|a2,b2
+//						0.2,
+//						//c2|a3,b1
+//						0.6,
+//						//c2|a3,b2
+//						0.9
+//						});
+		
+//		FiniteNode watch_tv = new FullCPTNode(ExampleRV.WATCH_TV_RV,
+//				new double[] {
+//						//d1|c1
+//						0.7,
+//						//d1|c2
+//						0.5,
+//						//d2|c1
+//						0.2,
+//						//d2|c2
+//						0.3,
+//						//d3|c1
+//						0.1,
+//						//d3|c2
+//						0.2,
+//						});
+		
+		return new BayesNet(nationality, age);
+	}
 
 	public static BayesianNetwork constructCloudySprinklerRainWetGrassNetwork() {
 		FiniteNode cloudy = new FullCPTNode(ExampleRV.CLOUDY_RV, new double[] {

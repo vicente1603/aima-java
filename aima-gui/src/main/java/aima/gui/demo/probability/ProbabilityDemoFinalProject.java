@@ -38,25 +38,24 @@ import aima.core.probability.temporal.generic.ForwardBackward;
 import aima.core.probability.util.ProbabilityTable;
 import aima.core.util.MockRandomizer;
 
-
-public class NewProbabilityDemo {
+public class ProbabilityDemoFinalProject {
 	
 	public static final int NUM_SAMPLES = 1000;
 
 	public static void main(String[] args) {
 
 		bayesEliminationAskDemo();
-		bayesRejectionSamplingDemo();
-		bayesLikelihoodWeightingDemo();
-		bayesGibbsAskDemo();
+//		bayesRejectionSamplingDemo();
+//		bayesLikelihoodWeightingDemo();
+//		bayesGibbsAskDemo();
 	}
 
 
 	public static void bayesEliminationAskDemo() {
 		System.out.println("DEMO: Bayes Elimination Ask");
 		System.out.println("===========================");
-		demoGuia04(new FiniteBayesModel(
-				BayesNetExampleFactory.constructGuia04(),
+		demoProjetoFinal(new FiniteBayesModel(
+				BayesNetExampleFactory.constructProjetoFinal_1(),
 				new EliminationAsk()));
 		System.out.println("===========================");
 	}
@@ -64,8 +63,8 @@ public class NewProbabilityDemo {
 	public static void bayesRejectionSamplingDemo() {
 		System.out.println("DEMO: Bayes Rejection Sampling N = " + NUM_SAMPLES);
 		System.out.println("==============================");
-		demoGuia04(new FiniteBayesModel(
-				BayesNetExampleFactory.constructGuia04(),
+		demoProjetoFinal(new FiniteBayesModel(
+				BayesNetExampleFactory.constructProjetoFinal_1(),
 				new BayesInferenceApproxAdapter(new RejectionSampling(),
 						NUM_SAMPLES)));
 		System.out.println("==============================");
@@ -75,8 +74,8 @@ public class NewProbabilityDemo {
 		System.out.println("DEMO: Bayes Likelihood Weighting N = "
 				+ NUM_SAMPLES);
 		System.out.println("================================");
-		demoGuia04(new FiniteBayesModel(
-				BayesNetExampleFactory.constructGuia04(),
+		demoProjetoFinal(new FiniteBayesModel(
+				BayesNetExampleFactory.constructProjetoFinal_1(),
 				new BayesInferenceApproxAdapter(new LikelihoodWeighting(),
 						NUM_SAMPLES)));
 		System.out.println("================================");
@@ -85,8 +84,8 @@ public class NewProbabilityDemo {
 	public static void bayesGibbsAskDemo() {
 		System.out.println("DEMO: Bayes Gibbs Ask N = " + NUM_SAMPLES);
 		System.out.println("=====================");
-		demoGuia04(new FiniteBayesModel(
-				BayesNetExampleFactory.constructGuia04(),
+		demoProjetoFinal(new FiniteBayesModel(
+				BayesNetExampleFactory.constructProjetoFinal_1(),
 				new BayesInferenceApproxAdapter(new GibbsAsk(), NUM_SAMPLES)));
 		System.out.println("=====================");
 	}
@@ -96,40 +95,39 @@ public class NewProbabilityDemo {
 	// PRIVATE METHODS
 	//
 
-	private static void demoGuia04(FiniteProbabilityModel model) {
+	private static void demoProjetoFinal(FiniteProbabilityModel model) {
 		System.out.println("--------------------");		
 		
-		//guia 04
+		//projeto final
 
-		AssignmentProposition aInfringiuLeiEleitoral = new AssignmentProposition(
-				ExampleRV.INFRIGIULEIELEITOTAL_RV, Boolean.TRUE);
-		AssignmentProposition anotInfringiuLeiEleitoral = new AssignmentProposition(
-				ExampleRV.INFRIGIULEIELEITOTAL_RV, Boolean.FALSE);
-		AssignmentProposition aIndiciado = new AssignmentProposition(
-				ExampleRV.INDICIADO_RV, Boolean.TRUE);
-		AssignmentProposition anotIndiciado = new AssignmentProposition(
-				ExampleRV.INDICIADO_RV, Boolean.FALSE);
-		AssignmentProposition aPromotorPoliticamenteMotivado = new AssignmentProposition(
-				ExampleRV.PROMOTORPOLITICAMENTEMOTIVADO_RV, Boolean.TRUE);
-		AssignmentProposition anotPromotorPoliticamenteMotivado = new AssignmentProposition(
-				ExampleRV.PROMOTORPOLITICAMENTEMOTIVADO_RV, Boolean.FALSE);
-		AssignmentProposition aConsideradoCulpado = new AssignmentProposition(
-				ExampleRV.CONSIDERADOCULPADO_RV, Boolean.TRUE);
-		AssignmentProposition anotConsideradoCulpado = new AssignmentProposition(
-				ExampleRV.CONSIDERADOCULPADO_RV, Boolean.FALSE);
-		AssignmentProposition aPreso = new AssignmentProposition(
-				ExampleRV.PRESO_RV, Boolean.TRUE);
-		AssignmentProposition anotPreso = new AssignmentProposition(
-				ExampleRV.PRESO_RV, Boolean.FALSE);
-		
+		AssignmentProposition a1 = new AssignmentProposition(
+				ExampleRV.AGE_RV, "0-30" );
+		AssignmentProposition a2 = new AssignmentProposition(
+				ExampleRV.AGE_RV, "31-40");		
+		AssignmentProposition a3 = new AssignmentProposition(
+				ExampleRV.AGE_RV, "41-100");	
+		AssignmentProposition b1 = new AssignmentProposition(
+				ExampleRV.NATIONALITY_RV, Boolean.TRUE);	
+		AssignmentProposition b2 = new AssignmentProposition(
+				ExampleRV.NATIONALITY_RV,  Boolean.FALSE);	
+		AssignmentProposition c1 = new AssignmentProposition(
+				ExampleRV.SPORTS_RV, Boolean.TRUE);	
+		AssignmentProposition c2 = new AssignmentProposition(
+				ExampleRV.SPORTS_RV,  Boolean.FALSE);	
+		AssignmentProposition d1 = new AssignmentProposition(
+				ExampleRV.WATCH_TV_RV, "a_lot" );
+		AssignmentProposition d2 = new AssignmentProposition(
+				ExampleRV.WATCH_TV_RV, "some");		
+		AssignmentProposition d3 = new AssignmentProposition(
+				ExampleRV.WATCH_TV_RV, "none");
 
-		System.out.println("P(b,i,~m,g,j) = "
-				+ model.prior(aInfringiuLeiEleitoral, aIndiciado, anotPromotorPoliticamenteMotivado, aConsideradoCulpado, aPreso));
+		System.out.println("P(a1, b2, c1, d1) = "
+				+ model.prior(b1,a2));
 		
-		System.out
-		.println("P<>(Preso | InfrigiuLei = true, Indiciado = true, PromotorMotivado= true) = "
-				+ model.posteriorDistribution(ExampleRV.PRESO_RV,
-						aInfringiuLeiEleitoral, aIndiciado, aPromotorPoliticamenteMotivado));
+//		System.out
+//		.println("P<>(Preso | InfrigiuLei = true, Indiciado = true, PromotorMotivado= true) = "
+//				+ model.posteriorDistribution(ExampleRV.PRESO_RV,
+//						aInfringiuLeiEleitoral, aIndiciado, aPromotorPoliticamenteMotivado));
 
 	}
 }
