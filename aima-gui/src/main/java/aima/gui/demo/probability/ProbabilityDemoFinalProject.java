@@ -44,10 +44,10 @@ public class ProbabilityDemoFinalProject {
 
 	public static void main(String[] args) {
 
-		bayesEliminationAskDemo();
+//		bayesEliminationAskDemo();
 //		bayesRejectionSamplingDemo();
-//		bayesLikelihoodWeightingDemo();
-//		bayesGibbsAskDemo();
+		bayesLikelihoodWeightingDemo();
+		bayesGibbsAskDemo();
 	}
 
 
@@ -122,12 +122,12 @@ public class ProbabilityDemoFinalProject {
 				ExampleRV.WATCH_TV_RV, "none");
 
 		System.out.println("P(a1, b2, c1, d1) = "
-				+ model.prior(b1,a2));
+				+ model.prior(b1,a2,c1,d1));
 		
-//		System.out
-//		.println("P<>(Preso | InfrigiuLei = true, Indiciado = true, PromotorMotivado= true) = "
-//				+ model.posteriorDistribution(ExampleRV.PRESO_RV,
-//						aInfringiuLeiEleitoral, aIndiciado, aPromotorPoliticamenteMotivado));
+		System.out
+		.println("P<>(c1 = true | a2 = true, b1 = true, d2= true) = "
+				+ model.posteriorDistribution(ExampleRV.SPORTS_RV,
+						a2, b1, d2));
 
 	}
 }
