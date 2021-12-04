@@ -38,40 +38,19 @@ import aima.core.probability.temporal.generic.ForwardBackward;
 import aima.core.probability.util.ProbabilityTable;
 import aima.core.util.MockRandomizer;
 
-public class ProbabilityDemoFinalProject {
+public class WorldCupProbabilityDemo {
 	
 	public static final int NUM_SAMPLES = 1000;
 
 	public static void main(String[] args) {
 
-//		bayesEliminationAskDemo();
-//		bayesRejectionSamplingDemo();
-		bayesLikelihoodWeightingDemo();
+
+//		bayesLikelihoodWeightingDemo();
 		bayesGibbsAskDemo();
 	}
 
-
-	public static void bayesEliminationAskDemo() {
-		System.out.println("DEMO: Bayes Elimination Ask");
-		System.out.println("===========================");
-		demoProjetoFinal(new FiniteBayesModel(
-				BayesNetExampleFactory.constructProjetoFinal_1(),
-				new EliminationAsk()));
-		System.out.println("===========================");
-	}
-
-	public static void bayesRejectionSamplingDemo() {
-		System.out.println("DEMO: Bayes Rejection Sampling N = " + NUM_SAMPLES);
-		System.out.println("==============================");
-		demoProjetoFinal(new FiniteBayesModel(
-				BayesNetExampleFactory.constructProjetoFinal_1(),
-				new BayesInferenceApproxAdapter(new RejectionSampling(),
-						NUM_SAMPLES)));
-		System.out.println("==============================");
-	}
-
 	public static void bayesLikelihoodWeightingDemo() {
-		System.out.println("DEMO: Bayes Likelihood Weighting N = "
+		System.out.println("World Cup: Bayes Likelihood Weighting N = "
 				+ NUM_SAMPLES);
 		System.out.println("================================");
 		demoProjetoFinal(new FiniteBayesModel(
@@ -82,7 +61,7 @@ public class ProbabilityDemoFinalProject {
 	}
 
 	public static void bayesGibbsAskDemo() {
-		System.out.println("DEMO: Bayes Gibbs Ask N = " + NUM_SAMPLES);
+		System.out.println("World Cup: Bayes Gibbs Ask N = " + NUM_SAMPLES);
 		System.out.println("=====================");
 		demoProjetoFinal(new FiniteBayesModel(
 				BayesNetExampleFactory.constructProjetoFinal_1(),
@@ -125,9 +104,20 @@ public class ProbabilityDemoFinalProject {
 				+ model.prior(b1,a2,c1,d1));
 		
 		System.out
-		.println("P<>(c1 = true | a2 = true, b1 = true, d2= true) = "
+		.println("P<>(Likes soccer | a2 = true, b1 = true, d2= true) = "
 				+ model.posteriorDistribution(ExampleRV.SPORTS_RV,
 						a2, b1, d2));
+		
+		DisjunctiveProposition b1Orb2 = new DisjunctiveProposition(
+				b1, b2);
+		System.out
+		.println(b1Orb2);
+		
+		System.out
+		.println("P<>(Likes soccer | a3 = true, b1 = true ou b2 = true d3= true) = "
+				+ model.posteriorDistribution(ExampleRV.SPORTS_RV, a3,
+						b1Orb2, d3));
+		
 
 	}
 }

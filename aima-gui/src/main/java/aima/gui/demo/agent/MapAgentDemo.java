@@ -9,7 +9,10 @@ import aima.core.search.framework.SearchForActions;
 import aima.core.search.framework.qsearch.GraphSearch;
 import aima.core.search.framework.qsearch.TreeSearch;
 import aima.core.search.informed.AStarSearch;
+import aima.core.search.uninformed.BreadthFirstSearch;
 import aima.core.search.uninformed.DepthFirstSearch;
+import aima.core.search.uninformed.DepthLimitedSearch;
+import aima.core.search.uninformed.IterativeDeepeningSearch;
 import aima.core.search.uninformed.UniformCostSearch;
 
 /**
@@ -24,14 +27,18 @@ public class MapAgentDemo {
 		EnvironmentListener<Object, Object> envView = new SimpleEnvironmentView();
 		env.addEnvironmentListener(envView);
 
-		String agentLoc = SimplifiedRoadMapOfRomania.ARAD;
+		String agentLoc = SimplifiedRoadMapOfRomania.NEAMT;
 		String destination = SimplifiedRoadMapOfRomania.BUCHAREST;
 
 		SearchForActions<String, MoveToAction> search;
-		// search = new DepthFirstSearch<>(new GraphSearch<>());
-		// search = new UniformCostSearch<>(new TreeSearch<>());
-		// search = new UniformCostSearch<>(new GraphSearch<>());
-		search = new AStarSearch<>(new GraphSearch<>(), MapFunctions.createSLDHeuristicFunction(destination, map));
+		 search = new BreadthFirstSearch<>(new GraphSearch<>());
+		 search = new UniformCostSearch<>(new GraphSearch<>());
+		 search = new DepthFirstSearch<>(new GraphSearch<>());
+		 search = new DepthLimitedSearch<>(9);
+		 search = new IterativeDeepeningSearch<>();
+
+
+//		search = new AStarSearch<>(new GraphSearch<>(), MapFunctions.createSLDHeuristicFunction(destination, map));
 
 		Agent<DynamicPercept, MoveToAction> agent;
 		agent = new SimpleMapAgent(map, search, destination);

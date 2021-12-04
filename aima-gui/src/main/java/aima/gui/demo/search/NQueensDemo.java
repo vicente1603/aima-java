@@ -38,14 +38,14 @@ public class NQueensDemo {
 	private static void startNQueensDemo() {
 		solveNQueensWithDepthFirstSearch();
 		solveNQueensWithBreadthFirstSearch();
-		solveNQueensWithAStarSearch();
-		solveNQueensWithAStarSearch4e();
-		solveNQueensWithRecursiveDLS();
-		solveNQueensWithIterativeDeepeningSearch();
-		solveNQueensWithSimulatedAnnealingSearch();
-		solveNQueensWithHillClimbingSearch();
-		solveNQueensWithGeneticAlgorithmSearch();
-		solveNQueensWithRandomWalk();
+//		solveNQueensWithAStarSearch()
+//		solveNQueensWithAStarSearch4e();
+//		solveNQueensWithRecursiveDLS();
+//		solveNQueensWithIterativeDeepeningSearch();
+//		solveNQueensWithSimulatedAnnealingSearch();
+//		solveNQueensWithHillClimbingSearch();
+//		solveNQueensWithGeneticAlgorithmSearch();
+//		solveNQueensWithRandomWalk();
 	}
 
 	private static void solveNQueensWithDepthFirstSearch() {
