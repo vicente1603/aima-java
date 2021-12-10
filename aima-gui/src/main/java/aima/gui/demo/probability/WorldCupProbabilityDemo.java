@@ -54,7 +54,7 @@ public class WorldCupProbabilityDemo {
 				+ NUM_SAMPLES);
 		System.out.println("================================");
 		demoProjetoFinal(new FiniteBayesModel(
-				BayesNetExampleFactory.constructProjetoFinal_1(),
+				BayesNetExampleFactory.constructProjetoFinal_A(),
 				new BayesInferenceApproxAdapter(new LikelihoodWeighting(),
 						NUM_SAMPLES)));
 		System.out.println("================================");
@@ -64,7 +64,7 @@ public class WorldCupProbabilityDemo {
 		System.out.println("World Cup: Bayes Gibbs Ask N = " + NUM_SAMPLES);
 		System.out.println("=====================");
 		demoProjetoFinal(new FiniteBayesModel(
-				BayesNetExampleFactory.constructProjetoFinal_1(),
+				BayesNetExampleFactory.constructProjetoFinal_A(),
 				new BayesInferenceApproxAdapter(new GibbsAsk(), NUM_SAMPLES)));
 		System.out.println("=====================");
 	}

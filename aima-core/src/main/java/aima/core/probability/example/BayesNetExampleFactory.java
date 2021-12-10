@@ -233,7 +233,9 @@ public class BayesNetExampleFactory {
 		return new BayesNet(burglary, earthquake);
 	}
 	
-	public static BayesianNetwork constructProjetoFinal_1() {
+	//problema A
+	
+	public static BayesianNetwork constructProjetoFinal_A() {
 		
 		FiniteNode age = new FullCPTNode(ExampleRV.AGE_RV,
 				new double[] { 
@@ -281,6 +283,24 @@ public class BayesNetExampleFactory {
 						}, sports);
 		
 		return new BayesNet(nationality, age, sports, watch_tv);
+	}
+	
+	//problema B
+	
+	public static BayesianNetwork constructProjetoFinal_B() {
+		
+		
+		FiniteNode trabalha = new FullCPTNode(ExampleRV.NATIONALITY_RV,
+				new double[] {
+						//trabalha=true, notTrabalha=false
+						66.7, 
+						//trabalha=false, notTrabalha=true
+						33.3,
+						
+		});
+		
+		
+		return new BayesNet();
 	}
 
 	public static BayesianNetwork constructCloudySprinklerRainWetGrassNetwork() {
