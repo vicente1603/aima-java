@@ -282,7 +282,7 @@ public class BayesNetExampleFactory {
 						0.2,
 						}, sports);
 		
-		return new BayesNet(nationality, age, sports, watch_tv);
+		return new BayesNet(age, nationality);
 	}
 	
 	//problema B
@@ -290,17 +290,37 @@ public class BayesNetExampleFactory {
 	public static BayesianNetwork constructProjetoFinal_B() {
 		
 		
-		FiniteNode trabalha = new FullCPTNode(ExampleRV.NATIONALITY_RV,
+		FiniteNode trabalha = new FullCPTNode(ExampleRV.TRABALHO_RV,
 				new double[] {
 						//trabalha=true, notTrabalha=false
-						66.7, 
+						0.667, 
 						//trabalha=false, notTrabalha=true
-						33.3,
-						
+						0.333,		
+		});
+		
+		FiniteNode rendaFamiliar = new FullCPTNode(ExampleRV.RENDA_FAMILIAR_RV,
+				new double[] {
+						0.384, 
+						0.329,		
+						0.287
+		});
+		
+		FiniteNode conjuge = new FullCPTNode(ExampleRV.CONJUGE_RV,
+				new double[] {
+						0.606, 
+						0.394		
+		});
+		
+		FiniteNode segundoGrau = new FullCPTNode(ExampleRV.SEGUNDO_GRAU_RV,
+				new double[] {
+						0.606, 
+						0.394		
 		});
 		
 		
-		return new BayesNet();
+		
+		
+		return new BayesNet(trabalha);
 	}
 
 	public static BayesianNetwork constructCloudySprinklerRainWetGrassNetwork() {

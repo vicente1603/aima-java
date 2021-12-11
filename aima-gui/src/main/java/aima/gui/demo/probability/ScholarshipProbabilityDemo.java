@@ -143,5 +143,10 @@ public class ScholarshipProbabilityDemo {
 				ExampleRV.BOLSA_RV, "QuarentaeCinco" );
 		AssignmentProposition cinquenta = new AssignmentProposition(
 				ExampleRV.BOLSA_RV, "Cinquenta" );	
+		
+		
+		System.out.println("P(trabalha) = "
+				+ model.prior(aTrabalho));
+		
 	}
 }
