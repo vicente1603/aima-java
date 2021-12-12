@@ -45,19 +45,7 @@ public class ScholarshipProbabilityDemo {
 	public static void main(String[] args) {
 
 
-//		bayesLikelihoodWeightingDemo();
 		bayesGibbsAskDemo();
-	}
-
-	public static void bayesLikelihoodWeightingDemo() {
-		System.out.println("Scholarship: Bayes Likelihood Weighting N = "
-				+ NUM_SAMPLES);
-		System.out.println("================================");
-		demoProjetoFinal(new FiniteBayesModel(
-				BayesNetExampleFactory.constructProjetoFinal_B(),
-				new BayesInferenceApproxAdapter(new LikelihoodWeighting(),
-						NUM_SAMPLES)));
-		System.out.println("================================");
 	}
 
 	public static void bayesGibbsAskDemo() {
@@ -145,8 +133,11 @@ public class ScholarshipProbabilityDemo {
 				ExampleRV.BOLSA_RV, "Cinquenta" );	
 		
 		
-		System.out.println("P(trabalha) = "
-				+ model.prior(aTrabalho));
+		System.out.println("P(UmaTresSM) = "
+				+ model.prior(umaTresSM));
+		
+		System.out.println("P(EscolaPublica) = "
+				+ model.prior(escolaPublica));
 		
 	}
 }

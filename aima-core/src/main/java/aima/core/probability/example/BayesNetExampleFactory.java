@@ -290,37 +290,305 @@ public class BayesNetExampleFactory {
 	public static BayesianNetwork constructProjetoFinal_B() {
 		
 		
-		FiniteNode trabalha = new FullCPTNode(ExampleRV.TRABALHO_RV,
+
+		
+		FiniteNode bolsa = new FullCPTNode(ExampleRV.BOLSA_RV,
 				new double[] {
-						//trabalha=true, notTrabalha=false
-						0.667, 
-						//trabalha=false, notTrabalha=true
-						0.333,		
+						0.1111111111111111, 
+						0.1111111111111111,
+						0.1111111111111111,
+						0.1111111111111111,
+						0.1111111111111111,
+						0.1111111111111111,
+						0.1111111111111111,
+						0.1111111111111111,
+						0.1111111111111111,
+						
+
 		});
+		
 		
 		FiniteNode rendaFamiliar = new FullCPTNode(ExampleRV.RENDA_FAMILIAR_RV,
 				new double[] {
-						0.384, 
-						0.329,		
-						0.287
-		});
+						0.01, 
+						0.29,		
+						0.70,	
+						0.03,
+						0.32,
+						0.65,					
+						0.15,
+						0.45,
+						0.40,						
+						0.20,
+						0.50,
+						0.30,					
+						0.35,
+						0.40,
+						0.25,					
+						0.52,
+						0.33,
+						0.15,					
+						0.65,
+						0.25,
+						0.10,						
+						0.75,
+						0.23,
+						0.02,					
+						0.80,
+						0.19,
+						0.01,
+		}, bolsa);
+		
+		FiniteNode trabalha = new FullCPTNode(ExampleRV.TRABALHO_RV,
+				new double[] {
+						0.50, 
+						0.50,
+						
+						0.55,
+						0.45,
+						
+						0.60,
+						0.40,
+						
+						0.65,
+						0.35,
+						
+						0.70,
+						0.30,
+						
+						0.75,
+						0.25,
+						
+						0.75,
+						0.25,
+						
+						0.75,
+						0.25,
+						
+						0.75,
+						0.25,			
+		}, bolsa);
 		
 		FiniteNode conjuge = new FullCPTNode(ExampleRV.CONJUGE_RV,
 				new double[] {
-						0.606, 
-						0.394		
-		});
+						0.50, 
+						0.50,
+						
+						0.50,
+						0.50,
+						
+						0.55,
+						0.45,
+						
+						0.60,
+						0.40,
+						
+						0.62,
+						0.38,
+						
+						0.64,
+						0.36,
+						
+						0.66,
+						0.34,
+						
+						0.68,
+						0.32,
+						
+						0.70,
+						0.30
+		}, bolsa);
+		
+		
+		FiniteNode irmao = new FullCPTNode(ExampleRV.IRMAO_RV,
+				new double[] {
+						0.50, 
+						0.50,
+						
+						0.55,
+						0.45,
+						
+						0.60,
+						0.40,
+						
+						0.62,
+						0.38,
+						
+						0.64,
+						0.36,
+						
+						0.66,
+						0.34,
+						
+						0.68,
+						0.32,
+						
+						0.69,
+						0.31,
+						
+						0.70,
+						0.30
+						
+		}, bolsa);
+		
+		
+		FiniteNode reside = new FullCPTNode(ExampleRV.RESIDE_RV,
+				new double[] {
+						0.70, 
+						0.30,
+						
+						0.65,
+						0.35,
+						
+						0.60,
+						0.40,
+						
+						0.55,
+						0.45,
+						
+						0.50,
+						0.50,
+						
+						0.45,
+						0.55,
+						
+						0.40,
+						0.60,
+						
+						0.20,
+						0.80,
+						
+						0.10,
+						0.90
+		}, bolsa);
+		
+		FiniteNode imovel = new FullCPTNode(ExampleRV.IMOVEL_RV,
+				new double[] {
+						0.70, 
+						0.30,
+						
+						0.65,
+						0.35,
+						
+						0.60,
+						0.40,
+						
+						0.55,
+						0.45,
+						
+						0.50,
+						0.50,
+						
+						0.45,
+						0.55,
+						
+						0.40,
+						0.60,
+						
+						0.20,
+						0.80,
+						
+						0.10,
+						0.90
+		}, bolsa);
+		
+		
+	
+		FiniteNode doencaGrave = new FullCPTNode(ExampleRV.DOENCA_GRAVE_RV,
+				new double[] {
+						0.40,
+						0.60,
+												
+						0.45,
+						0.55,
+						
+						0.50,
+						0.50,
+						
+						0.55,
+						0.45,
+						
+						0.60,
+						0.40,
+						
+						0.65,
+						0.35,
+						
+						0.70,
+						0.30,
+						
+						0.75,
+						0.25,
+						
+						0.80,
+						0.20
+						
+						
+		}, bolsa);
+		
+		FiniteNode fase = new FullCPTNode(ExampleRV.FASE_RV,
+				new double[] {
+						0.54, 
+						0.36,		
+						0.10,	
+						0.56,
+						0.35,
+						0.09,					
+						0.58,
+						0.34,
+						0.08,						
+						0.60,
+						0.33,
+						0.07,					
+						0.62,
+						0.32,
+						0.06,					
+						0.64,
+						0.31,
+						0.05,					
+						0.66,
+						0.30,						
+						0.04,
+						0.68,
+						0.29,					
+						0.03,
+						0.70,
+						0.28,
+						0.02
+		}, bolsa);
+		
 		
 		FiniteNode segundoGrau = new FullCPTNode(ExampleRV.SEGUNDO_GRAU_RV,
 				new double[] {
-						0.606, 
-						0.394		
-		});
+						0.10,
+						0.90,
+												
+						0.13,
+						0.87,
+						
+						0.25,
+						0.75,
+						
+						0.55,
+						0.45,
+						
+						0.60,
+						0.40,
+						
+						0.65,
+						0.35,
+						
+						0.70,
+						0.30,
+						
+						0.80,
+						0.20,
+						
+						0.90,
+						0.10
+		}, bolsa);
 		
-		
-		
-		
-		return new BayesNet(trabalha);
+		return new BayesNet(bolsa, rendaFamiliar, segundoGrau);
 	}
 
 	public static BayesianNetwork constructCloudySprinklerRainWetGrassNetwork() {

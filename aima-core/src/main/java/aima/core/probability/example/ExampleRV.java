@@ -62,22 +62,31 @@ public class ExampleRV {
 	
 	public static final RandVar TRABALHO_RV = new RandVar("Trabalho",
 			new BooleanDomain());
+	
 	public static final RandVar CONJUGE_RV = new RandVar("Conjuge",
 			new BooleanDomain());
+	
 	public static final RandVar RENDA_FAMILIAR_RV = new RandVar("RendaFamiliar",
 			new ArbitraryTokenDomain("UmaTresSM", "QuatroaDez", "DezAcimaSM"));
+	
 	public static final RandVar SEGUNDO_GRAU_RV = new RandVar("SegundoGrau",
 			new ArbitraryTokenDomain("EscolaPublica", "EscolaParticular"));
+	
 	public static final RandVar FASE_RV = new RandVar("Fase",
 			new ArbitraryTokenDomain("PrimeiraQui", "QuintaSetima", "AcimaSetima"));
+	
 	public static final RandVar IRMAO_RV = new RandVar("Irmao",
 			new BooleanDomain());
+	
 	public static final RandVar RESIDE_RV = new RandVar("Reside",
 			new ArbitraryTokenDomain("Lages", "ForaDeLages"));
+	
 	public static final RandVar IMOVEL_RV = new RandVar("Imovel",
 			new BooleanDomain());
+	
 	public static final RandVar DOENCA_GRAVE_RV = new RandVar("DoencaGrave",
 			new BooleanDomain());
+	
 	public static final RandVar BOLSA_RV = new RandVar("Bolsa",
 			new ArbitraryTokenDomain("Dez", "Quinze", "Vinte", "VinteCinco", "Trinta", "TrintaeCinco", "Quarenta", "QuarentaeCinco", "Cinquenta"));
 	
